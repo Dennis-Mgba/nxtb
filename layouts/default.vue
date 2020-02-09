@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// import '../assets/styles/main.css'
 import Navbar from '@/components/Navbar'        // import the navbar component
 export default {
     components: {
