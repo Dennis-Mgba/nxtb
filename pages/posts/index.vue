@@ -5,14 +5,19 @@
             <hr>
         </div>
         <div class="container">
-            <p v-for="post in posts" :key="post.id">{{post.id}}. {{post.title}}</p>
+            <Card v-for="post in posts" :key="post.id" :post="post" />
         </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Card from '@/components/Card'
+
     export default {
+        components: {
+            Card
+        },
         data() {
             return {
                 posts: []
