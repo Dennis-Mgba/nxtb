@@ -15,17 +15,26 @@ import axios from 'axios'
     export default {
         data() {
             return {
-                posts: [],                // declare an empty array
+                posts: []
             }
         },
-        // create a mounted hook
-        mounted() {
-            axios.get('https://jsonplaceholder.typicode.com/todos')
-            .then(response => {     // if the api request is successful
-                console.log(response)
-                this.posts = response.data
+        // using nuxt native asynData
+        asyncData() {
+            return axios.get('https://jsonplaceholder.typicode.com/todos')
+            .then(res => {
+                // console.log(res)
+                return {posts: res.data}
             })
-            .catch(error => console.log(error));     // catch and console.log error if request fails
-        }
+        },
+
+        // // using regular vue mounted hook
+        // mounted() {
+        //     axios.get('https://jsonplaceholder.typicode.com/todos')
+        //     .then(response => {     // if the api request is successful
+        //         console.log(response)
+        //         this.posts = response.data
+        //     })
+        //     .catch(error => console.log(error));     // catch and console.log error if request fails
+        // }
     }
 </script>
