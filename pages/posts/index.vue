@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <h2>Making API request - the vue way.</h2>
+            <h2>Making API request - using the nuxt native asyncData.</h2>
             <hr>
         </div>
         <div class="container">
@@ -24,13 +24,19 @@ import Card from '@/components/Card'
             }
         },
         // using nuxt native asynData
-        asyncData() {
-            return axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                // console.log(res)
-                return {posts: res.data}
-            })
+        async asyncData( {store} ) {
+            let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+            // return {posts: data}
+            store.dispatch('setPosts', data)
         },
+
+
+        // asyncData() {
+        //     return axios.get('https://jsonplaceholder.typicode.com/posts')
+        //     .then(res => {
+        //         return {posts: res.data}
+        //     })
+        // },
 
         // // using regular vue mounted hook
         // mounted() {
