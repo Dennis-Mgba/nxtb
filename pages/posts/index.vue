@@ -25,7 +25,7 @@ import Card from '@/components/Card'
         },
         // using nuxt native asynData
         asyncData() {
-            return axios.get('https://jsonplaceholder.typicode.com/todos')
+            return axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 // console.log(res)
                 return {posts: res.data}
@@ -40,6 +40,9 @@ import Card from '@/components/Card'
         //         this.posts = response.data
         //     })
         //     .catch(error => console.log(error));     // catch and console.log error if request fails
-        // }
+        // },
+        head: {
+            title: 'List of posts'
+        }
     }
 </script>
