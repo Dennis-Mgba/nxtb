@@ -5,7 +5,7 @@
             <hr>
         </div>
         <div class="container">
-            <Card v-for="post in allPosts" :key="post.id" :post="post" />
+            <Card v-for="post in posts" :key="post.id" :post="post" />
         </div>
     </div>
 </template>
@@ -13,6 +13,7 @@
 <script>
 import axios from 'axios'
 import Card from '@/components/Card'
+import {mapGetters} from 'vuex'
 
     export default {
         components: {
@@ -20,13 +21,14 @@ import Card from '@/components/Card'
         },
         data() {
             return {
-                posts: []
+                allPosts: []
             }
         },
         computed: {
-            allPosts() {
-                return this.$store.getters.posts
-            }
+            ...mapGetters(['posts'])
+            // allPosts() {
+            //     return this.$store.getters.posts
+            // }
         },
 
         // using nuxt native asynData
