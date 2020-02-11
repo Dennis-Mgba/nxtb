@@ -19,6 +19,11 @@ import axios from 'axios'
         async asyncData(context) {
             let {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)    // here we are using the back tick in plcae of quote
             return {post: data}     //return a single post
+        },
+        head() {
+            return {
+                title: this.post.title
+            }
         }
     }
 </script>

@@ -42,7 +42,7 @@ import Card from '@/components/Card'
         //     .catch(error => console.log(error));     // catch and console.log error if request fails
         // },
         head: {
-            title: 'List of posts'
+            title: 'Nblog | List of posts'
         }
     }
 </script>
