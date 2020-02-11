@@ -3,7 +3,7 @@
         <h5>{{post.title}}</h5>
         <p>{{post.body}}</p>
         <pre>post-num: {{$route.params.id}}</pre>
-        <nuxt-link to="/posts">Back to post</nuxt-link>
+        <nuxt-link to="/posts"> <= Back to posts</nuxt-link>
     </div>
 </template>
 

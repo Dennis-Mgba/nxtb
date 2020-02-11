@@ -5,7 +5,7 @@
             <hr>
         </div>
         <div class="container">
-            <Card v-for="post in posts" :key="post.id" :post="post" />
+            <Card v-for="post in allPosts" :key="post.id" :post="post" />
         </div>
     </div>
 </template>
@@ -23,6 +23,12 @@ import Card from '@/components/Card'
                 posts: []
             }
         },
+        computed: {
+            allPosts() {
+                return this.$store.getters.posts
+            }
+        },
+
         // using nuxt native asynData
         async asyncData( {store} ) {
             let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -30,23 +36,6 @@ import Card from '@/components/Card'
             store.dispatch('setPosts', data)
         },
 
-
-        // asyncData() {
-        //     return axios.get('https://jsonplaceholder.typicode.com/posts')
-        //     .then(res => {
-        //         return {posts: res.data}
-        //     })
-        // },
-
-        // // using regular vue mounted hook
-        // mounted() {
-        //     axios.get('https://jsonplaceholder.typicode.com/todos')
-        //     .then(response => {     // if the api request is successful
-        //         console.log(response)
-        //         this.posts = response.data
-        //     })
-        //     .catch(error => console.log(error));     // catch and console.log error if request fails
-        // },
         head: {
             title: 'Nblog | List of posts'
         }
