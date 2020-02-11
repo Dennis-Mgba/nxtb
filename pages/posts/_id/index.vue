@@ -16,8 +16,8 @@ import axios from 'axios'
                 post: ''
             }
         },
-        async asyncData(context) {
-            let {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)    // here we are using the back tick in plcae of quote
+        async asyncData({params}) {
+            let {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)    // here we are using the back tick in plcae of quote
             return {post: data}     //return a single post
         },
         head() {
