@@ -32,7 +32,7 @@ import {mapGetters} from 'vuex'
         },
 
         // using nuxt native asynData
-        async asyncData( {store} ) {
+        async fetch( {store} ) {
             let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
             // return {posts: data}
             store.dispatch('setPosts', data)
