@@ -47,6 +47,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      "@/plugins/scrollto.js"
   ],
   /*
   ** Nuxt.js dev-modules
