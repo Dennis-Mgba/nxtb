@@ -33,11 +33,11 @@ import {mapGetters} from 'vuex'
         },
 
         // using nuxt native asynData
-        async fetch( {store} ) {
-            let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
-            // return {posts: data}
-            store.dispatch('setPosts', data)
-        },
+        // async fetch( {store} ) {
+        //     let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+        //     // return {posts: data}
+        //     store.dispatch('setPosts', data)
+        // },
 
         head: {
             title: 'Nblog | List of posts'

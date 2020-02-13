@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // create a store
 
 export const state = () => ({
@@ -25,7 +27,12 @@ export const mutations = {
 // actions -
 export const actions = {
     // use commit to commit to the post - below we can use context.commit but we can also destructure it {commit}
-    setPosts({commit}, posts) {
-        commit("SET_POSTS", posts);
+    async nuxtServerInit({commit}) {
+        let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        commit("SET_POSTS", data);
     }
+
+    // setPosts({commit}, posts) {
+    //     commit("SET_POSTS", posts);
+    // }
 };
