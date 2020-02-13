@@ -43,6 +43,12 @@ export default {
   css: [
       "@/assets/styles/main.css"
   ],
+
+  transition: {
+      name: "fade",
+      mode: "out-in"
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
