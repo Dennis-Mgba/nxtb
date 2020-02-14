@@ -1,6 +1,6 @@
-# nblog
+# nxtb
 
-> Learning full stack development. Nuxt + Laravel
+> Learning Nuxt
 
 ## Build Setup
 
