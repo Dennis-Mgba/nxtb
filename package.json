@@ -1,7 +1,7 @@
 {
-  "name": "nblog",
+  "name": "nblo",
   "version": "1.0.0",
-  "description": "Learning full stack development. Nuxt + Laravel",
+  "description": "Learning Nuxt",
   "author": "Dennis",
   "private": true,
   "scripts": {
